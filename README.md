@@ -1,3 +1,5 @@
-# owl-swap
+# Messages
 
-Vinny the Pooh 2
+## Description
+
+This branch has the files related to the chatting feature
