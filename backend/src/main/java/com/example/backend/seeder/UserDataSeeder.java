@@ -30,7 +30,7 @@ public class UserDataSeeder {
                 User user = new User();
                 user.setUserId(GenerateUtils.generateUUID());
                 user.setUserName("anuchan");
-                user.setEmail("anuchan@temple.com");
+                user.setEmail("anuchan@temple.edu");
                 user.setHashPassword(passwordEncoder.encode("123456")); 
                 user.setIsActive(true);
                 user.setCreatedAt(new Date());
