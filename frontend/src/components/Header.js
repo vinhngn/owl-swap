@@ -2,7 +2,39 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Header = () => {
+const Header = (props) => {
+  let button; /*Checking the loggedin condition*/
+  if (props.loggedIn === "false") {
+    button = (
+      <>
+        <li className="nav-item">
+          <Link className="nav-link" to="/login">
+            Login
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/signup">
+            Sign Up
+          </Link>
+        </li>
+      </>
+    );
+  } else {
+    button = (
+      <>
+        <li className="nav-item">
+          <Link className="nav-link" to="/logout">
+            Logout
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/Chats">
+            Chats
+          </Link>
+        </li>
+      </>
+    );
+  }
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -20,20 +52,9 @@ const Header = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/signup">
-                Sign Up
-              </Link>
-            </li>
-          </ul>
-        </div>
+        {/* <div className="collapse navbar-collapse" id="navbarNav"> */}
+        <ul className="nav justify-content-end">{button}</ul>
+        {/* </div> */}
       </div>
     </nav>
   );
