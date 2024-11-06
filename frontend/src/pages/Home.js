@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../components/Header";
+import Home_Layout from "../components/Home";
 const Home = () => {
   return (
     <body className="d-flex flex-column min-vh-100">
       <div className="container">
         <Header loggedIn="true" />
-        <h1>Welcome to the Home Page</h1>
-        <p>This is the main page of our application.</p>
+        <Home_Layout />
         <br />
         <br />
         <p>Expected structure</p>
